@@ -32,6 +32,10 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public static function create(array $only)
+    {
+    }
+
     /**
      * Get the attributes that should be cast.
      *
