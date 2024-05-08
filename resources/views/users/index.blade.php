@@ -14,23 +14,21 @@
             </x-slot>
         </x-section-title>
 
-
         <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
             <x-button as="a" href="/users/create">
                 Add user
             </x-button>
         </div>
     </div>
-<div class="mt-8 flow-root">
 
-    </div>
+<div class="mt-8 flow-root">
     <x-table>
         <x-table.thead>
             <tr>
-                <x-table.td>#</x-table.td>
-                <x-table.td>Name</x-table.td>
-                <x-table.td>Email</x-table.td>
-                <x-table.td>Created At</x-table.td>
+                <x-table.th>#</x-table.th>
+                <x-table.th>Name</x-table.th>
+                <x-table.th>Email</x-table.th>
+                <x-table.th>Created At</x-table.th>
             </tr>
         </x-table.thead>
         <x-table.tbody>
@@ -44,4 +42,6 @@
         @endforeach
         </x-table.tbody>
     </x-table>
+</div>
+
 </x-app-layout>

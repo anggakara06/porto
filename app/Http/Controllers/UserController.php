@@ -9,22 +9,22 @@ use Illuminate\View\View;
 
 class UserController extends Controller
 {
-    public function index():View
+    public function index()
     {
         $users = User::query()->latest()->get();
 
         return view('users.index', compact('users'));
     }
 
-    public function create():View
+    public function create()
     {
         return view('users.create');
     }
 
-    public function store(Request $request):View
+    public function store(Request $request)
     {
-        dd($request->all());
-//        User::create($request->only('name', 'email', 'password'));
-//        return redirect('/users');
+//        dd($request->all());
+        User::create($request->only('name', 'email', 'password'));
+        return redirect('/users');
     }
 }

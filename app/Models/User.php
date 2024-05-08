@@ -34,6 +34,7 @@ class User extends Authenticatable
 
     public static function create(array $only)
     {
+        //
     }
 
     /**
