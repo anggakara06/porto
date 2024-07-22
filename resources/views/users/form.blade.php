@@ -1,10 +1,10 @@
 <x-app-layout title="Create User">
     <x-slot name="heading">
-        Update User : {{ $user->name }}
+        {{ $page_meta['title'] }}
     </x-slot>
 
-    <form action="/users/{{ $user->id }}" method="post" class="space-y-6">
-        @method('PUT')
+    <form action="{{ $page_meta['url'] }}" method="post" class="space-y-6">
+        @method($page_meta['method'])
         @csrf
         <div>
             <label for="name">Name</label>
@@ -27,6 +27,6 @@
             <p class="text-red-500 text-sm">{{ $message }}</p>
             @enderror
         </div>
-        <x-button>Update</x-button>
+        <x-button>{{$page_meta['submit_text']}}</x-button>
     </form>
 </x-app-layout>

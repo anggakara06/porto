@@ -1,5 +1,4 @@
 <x-app-layout title="Users">
-
     <x-slot name="heading">Users</x-slot>
 
 {{--    <div class="px-4 sm:px-6 lg:px-8">--}}
@@ -29,6 +28,7 @@
                 <x-table.th>Name</x-table.th>
                 <x-table.th>Email</x-table.th>
                 <x-table.th>Created At</x-table.th>
+                <x-table.th>Actions</x-table.th>
             </tr>
         </x-table.thead>
         <x-table.tbody>
@@ -38,6 +38,13 @@
                 <x-table.td>{{ $user->name }}</x-table.td>
                 <x-table.td>{{ $user->email }}</x-table.td>
                 <x-table.td>{{ $user->created_at->diffForHumans() }}</x-table.td>
+                <x-table.td>
+                    <div class="flex justify-end gap-x-2">
+                        <a href="/users/{{ $user->id }}" class="text-blue-600 hover:underline">View</a>
+                        <a> | </a>
+                        <a href="/users/{{ $user->id }}/edit" class="text-blue-600 hover:underline">Edit</a>
+                    </div>
+                </x-table.td>
             </tr>
         @endforeach
         </x-table.tbody>
